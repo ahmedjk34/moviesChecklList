@@ -5,10 +5,14 @@ let delete_btn = document.getElementById("delete");
 let popup = document.querySelector('.popup');
 let overlay = document.querySelector('.overlay');
 let card = document.querySelector('.card');
+let input_name = document.querySelector("#name");
+let input_image = document.querySelector("#poster");
+let input_rating = document.querySelector("#rating")
+const addMovie_btn = document.getElementById("add_movie")
 //popup & overlay
 add_btn.addEventListener('click' , function (){
   overlay.setAttribute("style" , "visibility: visible;   background-color: rgba(0, 0, 0, 0.6);  ")
-  popup.setAttribute("style" , "visibility: visible ;   width: 40vw;height: 60vh;")
+  popup.setAttribute("style" , "display: block ;   width: 40vw;height: 60vh; opacity:1;")
 
 });
 //object
@@ -51,5 +55,12 @@ class newMovie {
         ratingHolder.appendChild(star);
     }
 }
-const n = new newMovie('adasdadsd' , "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg" , 8);
-n.add()
+
+addMovie_btn.addEventListener('click' , (e) => {
+    e.preventDefault();
+    const newmovie = new newMovie(input_name.value , input_image.value , input_rating.value);
+    newmovie.add();
+    overlay.setAttribute("style" , "visibility: hidden;   background-color:none;  ")
+    popup.setAttribute("style" , "display: none ;   width: 20vw;height: 30vh;")
+  
+});

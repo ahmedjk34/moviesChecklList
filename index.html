@@ -9,7 +9,24 @@
 </head>
 <body>
   <div class="overlay"></div>
-  <div class="popup"></div>
+  <div class="popup">
+    <form>
+   <h2>Add a Movie!</h2>
+   <div class="details">
+    <label for = "name">Movie Name:</label>
+    <input type="text" name="name" id="name" placeholder="Name" required>
+   </div>
+   <div class="details">
+   <label for="rating">Movie Rating:</label>
+   <input type="number" name="rating" id="rating" min="0" max="10" placeholder="0-10" required>
+   </div>
+   <div class="details">
+    <label for="poster">Movie Poster:</label>
+    <input type="url" name="poster" accept="image/png, image/gif, image/jpeg" id="poster" re>
+  </div>
+  <button id="add_movie">Add</button>
+  </form>
+  </div>
 <div class="page-container">
   <header>
   <div>
