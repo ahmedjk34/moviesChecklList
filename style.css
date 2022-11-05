@@ -1,0 +1,33 @@
+/*Genral*/
+:root
+{
+  --main-background: #f1f5f9;
+  --header-footer-background:#64748b;
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.page-container{
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template: minmax(min(25% , 100px) , 1rem) 3fr minmax(min(25% , 100px) , 1rem) / 1fr;
+ /*added 1rem and min to make a flexible header/
+ footer with a minimum of a fr unit*/
+}
+/*header*/
+header{
+  background-color: var(--header-footer-background);
+}
+/*main*/
+main{
+  background-color:var(--main-background)
+}
+/*footer*/
+footer{
+  background-color: var(--header-footer-background);
+}
