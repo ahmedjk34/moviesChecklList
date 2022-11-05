@@ -10,6 +10,8 @@ font-family: 'Roboto Condensed', sans-serif;
   --main-background: #f1f5f9;
   --header-footer-background:#64748b;
   --card-background:#cbd5e1;
+  --button: #52525b;
+  --button-hover:#262626;
 }
 
 * {
@@ -24,8 +26,9 @@ font-family: 'Roboto Condensed', sans-serif;
   min-height: 100vh;
   display: grid;
   background-color: var(--main-background) ;
-  grid-template: minmax(min(25% , 100px) , 1rem) 3fr minmax(min(25% , 100px) , 1rem) / 1fr;
- /*added 1rem and min to make a flexible header/
+  grid-template: minmax(min(25% , 100px) , 1rem) 50px 3fr minmax(min(25% , 100px) , 1rem) / 1fr;
+  gap:1rem;
+  /*added 1rem and min to make a flexible header/
  footer with a minimum of a fr unit*/
 }
 /*header*/
@@ -53,14 +56,38 @@ header > div:nth-child(1){ /*adding a gap between log. and sin.*/
 header > div:nth-child(2){ /*adding a gap between log. and sin.*/
    gap: 1rem;
 }
+/*add & delete buttons*/
+#add ,
+#delete{
+  width: 25%;
+  padding: 1rem;
+  color:white;
+  border:none;
+  border-radius: 0.8rem;
+  font-size: x-large;
+  vertical-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color:var(--button);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#add:hover ,
+#delete:hover{
+  background-color: var(--button-hover);
+  transition:ease-in-out 0.7s;
+}
+#add{
+  place-self: center;
+}
 /*main*/
 main{
   background-color:var(--main-background);
   display: grid;
-  grid-template: repeat(auto-fit , 400px) / repeat(auto-fit , minmax(200px , 1fr));
+  grid-template:  repeat(auto-fit , 400px) / repeat(auto-fit , minmax(200px , 1fr));
   grid-auto-rows: 400px;
   gap:1rem;
-  margin:1rem 0 ;
+
 }
 .card{
 width: 100%;
@@ -72,4 +99,11 @@ border: none;
 /*footer*/
 footer{
   background-color: var(--header-footer-background);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+
 }
